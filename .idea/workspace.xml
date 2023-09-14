@@ -4,146 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7b0b449-5003-4a35-b49e-fe1e3b816db8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeception.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/netboostProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php-docker-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/remote-mappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/.vscode/extensions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/.vscode/tasks.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/angular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/proxy.conf.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/app.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/crawler/crawler.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/crawler/crawler.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/crawler/crawler.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/landing-page/landing-page.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/landing-page/landing-page.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/landing-page/landing-page.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/page-not-found/page-not-found.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/page-not-found/page-not-found.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/page-not-found/page-not-found.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/app/shared/services/http/crawler.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/environments/environment.development.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/environments/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/src/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-app/tsconfig.spec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/.styleci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Console/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Exceptions/Handler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Http/Controllers/CrawlerController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Http/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Http/Middleware/PreventRequestsDuringMaintenance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Http/Middleware/TrimStrings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Http/Middleware/TrustHosts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Http/Middleware/TrustProxies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Http/Requests/CrawlerRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Models/CrawledUrl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Models/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/artisan" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/bootstrap/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/bootstrap/cache/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/broadcasting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/cache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/cors.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/filesystems.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/hashing.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/logging.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/mail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/queue.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/sanctum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/services.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/session.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/config/view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/database/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/database/factories/UserFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/public/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/resources/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/resources/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/resources/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/resources/lang/en/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/resources/lang/en/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/resources/lang/en/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/resources/lang/en/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/resources/views/welcome.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/routes/api.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/routes/channels.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/routes/console.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/routes/web.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/server.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/storage/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/storage/app/public/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/storage/framework/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/storage/framework/cache/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/storage/framework/cache/data/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/storage/framework/sessions/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/storage/framework/testing/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/storage/framework/views/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/storage/logs/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/terminal.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/tests/CreatesApplication.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/tests/Feature/ExampleTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/tests/TestCase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/tests/Unit/ExampleTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel-app/webpack.mix.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx-config/conf.d/default.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx-config/nginx.conf" afterDir="false" />
-    </list>
+    <list default="true" id="f7b0b449-5003-4a35-b49e-fe1e3b816db8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -348,7 +209,7 @@
       <option name="presentableId" value="Default" />
       <updated>1694627696787</updated>
       <workItem from="1694627699154" duration="22928000" />
-      <workItem from="1694652893015" duration="3558000" />
+      <workItem from="1694652893015" duration="4418000" />
     </task>
     <servers />
   </component>
