@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  laravel-app:
+    build:
+      context: ./laravel-app
+      dockerfile: Dockerfile
+    container_name: laravel_app
+    volumes:
+      - ./laravel-app:/var/www
+    environment:
+      - DB_CONNECTION=mongodb
+      - DB_HOST=mongo
+      - DB_PORT=27017
+      - XDEBUG_MODE=debug
+      - XDEBUG_CONFIG=remote_host=host.docker.internal remote_port=9003
+      - PHP_IDE_CONFIG=serverName=laravel-app
+
+    networks:
+      - app-network
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    volumes:
+      - ./nginx-config/conf.d:/etc/nginx/conf.d
+      - ./laravel-app:/var/www
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - laravel-app
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+
+  node:
+    image: node:16
+    container_name: node
+    ports:
+      - "4200:4200"
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+
