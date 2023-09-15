@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {CrawlerService} from "../shared/services/http/crawler.service";
-
+import Swal from 'sweetalert2'
 interface CrawledUrlInterface {
   url: string;
   depth: number;
@@ -32,7 +32,10 @@ export class CrawlerComponent implements OnInit {
   onSubmit() {
     const payload: CrawledUrlInterface = {url: this.form.get('url')?.value, depth: this.form.get('depth')?.value};
     this.crawlService.postData('crawl', payload).subscribe({
-        next: data => this.crawledUrls = data as CrawledUrlInterface[],
+        next: data => {
+          Swal.fire('great success')
+          this.crawledUrls = data as CrawledUrlInterface[]
+        },
       }
     );
   }

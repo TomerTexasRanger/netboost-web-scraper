@@ -5,7 +5,8 @@
       <tool tool_name="PHPUnit">
         <cache>
           <versions>
-            <info id="interpreter-e383b512-ed9e-4c31-8f9f-f86f2adfac9a" version="9.6.12" />
+            <info id="LocalC:\Users\sapir\PhpstormProjects\netboostProject\laravel-app\vendor\autoload.php" version="PHPUnit version can't be detected. Default PHP interpreter is not local" />
+            <info id="interpreter-a83c3f42-f768-472b-8a3d-c467ce243272" version="9.6.12" />
           </versions>
         </cache>
       </tool>

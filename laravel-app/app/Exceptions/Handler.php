@@ -7,6 +7,7 @@ use Throwable;
 
 class Handler extends ExceptionHandler
 {
+
     /**
      * A list of the exception types that are not reported.
      *
@@ -32,10 +33,22 @@ class Handler extends ExceptionHandler
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->reportable(function (Throwable $e) {
             //
         });
     }
+
+    public function report(Throwable $e): void
+    {
+        // Resolve the singleton manually
+        $mongoSession = app('App\Services\Transaction\TransactionService');
+
+        // Rollback MongoDB transaction if an exception is thrown
+        $mongoSession->rollback();
+
+        parent::report($e);
+    }
+
 }
