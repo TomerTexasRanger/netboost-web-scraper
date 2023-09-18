@@ -1,5 +1,5 @@
 # Use PHP 7.4 FPM as base image
-FROM php:7.4-fpm
+FROM php:8.0-fpm
 
 # Install system dependencies and PHP extensions
 RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev zip git unzip && \
@@ -14,16 +14,17 @@ RUN apt-get update && apt-get install -y wget gnupg && \
     pecl install mongodb && docker-php-ext-enable mongodb
 
 # Install Debugger
-RUN pecl install xdebug-2.9.8 && \
+RUN pecl install xdebug && \
     docker-php-ext-enable xdebug
 
 
-RUN echo "xdebug.remote_enable=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
-    echo "xdebug.remote_autostart=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
-    echo "xdebug.remote_port=9003" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
-    echo "xdebug.remote_host=host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
+    echo "xdebug.start_with_request=yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
+    echo "xdebug.client_port=9003" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
+    echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
-
+# Install Redis extension
+RUN pecl install redis && docker-php-ext-enable redis
 
 
 # Install Composer globally

@@ -6,15 +6,17 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
+        "ext-mongodb": "*",
         "ext-pdo": "*",
+        "beyondcode/laravel-websockets": "^2.0@beta",
         "fruitcake/laravel-cors": "^3.0",
         "guzzlehttp/guzzle": "^7.8",
+        "illuminate/queue": "*",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "mongodb/laravel-mongodb": "^3.8",
-        "symfony/dom-crawler": "^5.4",
-        "ext-mongodb": "*"
+        "symfony/browser-kit": "^6.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.13",
@@ -43,7 +45,10 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:meta"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

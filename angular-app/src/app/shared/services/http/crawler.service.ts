@@ -1,12 +1,13 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, of} from "rxjs";
+import {environment} from "../../../../environments/environment.development";
 @Injectable({
   providedIn: 'root',
 })
 export class CrawlerService {
 
-  private apiUrl = 'http://localhost/api/';
+  private apiUrl = environment.apiUrl;
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})

@@ -1,0 +1,34 @@
+<form (ngSubmit)="submitUrl()" [formGroup]="form">
+  <div class="row align-items-stretch justify-content-center">
+    <!-- URL Field -->
+    <div class="col-md-4 form-group">
+      <label for="url">URL</label>
+      <input type="text" class="form-control" id="url" formControlName="url">
+      <small [ngClass]="form.touched && form.controls['url'].hasError('required') ? 'visible' : 'invisible'"
+             class="text-danger">
+        URL is required.
+      </small>
+      <div *ngIf="form.touched && form.controls['url'].hasError('pattern')" class="text-danger ">
+        Invalid URL pattern.
+      </div>
+    </div>
+
+    <!-- Depth Field -->
+    <div class="col-md-2 form-group">
+      <label for="depth">Depth</label>
+      <input type="number" class="form-control" id="depth" formControlName="depth">
+      <small [ngClass]="form.touched && form.controls['url'].hasError('required') ? 'visible' : 'invisible'"
+             class="text-danger">
+        Invalid number.
+      </small>
+    </div>
+    <div class="col-4 align-self-center">
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+
+    </div>
+  </div>
+
+</form>
+
+

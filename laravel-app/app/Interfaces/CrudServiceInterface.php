@@ -58,7 +58,7 @@ interface CrudServiceInterface
      *      return new self();
      *  }
      *
-     * @example for Save function:  ModelService::transaction()::Store($data)->commit();
+     * @example for Save function:  ModelService::transaction()::StoreRequest($data)->commit();
      */
     public static function transaction();
 

@@ -1,2 +1,32 @@
-<header></header>
-<router-outlet></router-outlet>
+<div class="min-vh-100 min-vw-100  d-flex flex-column">
+
+
+  <!-- Header -->
+  <header class="bg-dark-subtle container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light container">
+      <h1>NetBoost WebScraper</h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    </nav>
+  </header>
+  <!-- Content -->
+  <div class="container flex-grow-1 mt-4">
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <router-outlet></router-outlet>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center text-lg-start">
+    <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 NetBoost WebScraper
+    </div>
+  </footer>
+</div>

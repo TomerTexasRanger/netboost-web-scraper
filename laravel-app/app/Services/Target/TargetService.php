@@ -2,28 +2,26 @@
 
 namespace App\Services\Target;
 
-use App\Abstracts\CrudServiceAbstract;
+use App\Models\Target;
 use App\Services\Target\Crud\CreateService;
 use App\Services\Target\Crud\EditService;
 use App\Services\Target\Crud\IndexService;
 use App\Services\Target\Crud\ShowService;
 use App\Services\Target\Crud\StoreService;
 use App\Services\Target\Crud\UpdateService;
-use App\Traits\CrudTrait;
+use App\Services\Transaction\TransactionService;
+use Exception;
 
-class TargetService extends CrudServiceAbstract
+class TargetService extends TransactionService
 {
-    use CrudTrait;
 
-    static protected function crudServiceMapper(): array
+    protected Target $model;
+
+    /**
+     * @throws Exception
+     */
+    public static  function Store(array $data): StoreService
     {
-        return [
-            'index' => IndexService::class,
-            'show' => ShowService::class,
-            'edit' => EditService::class,
-            'store' => StoreService::class,
-            'update' => UpdateService::class,
-            'create' => CreateService::class,
-        ];
+        return new StoreService($data);
     }
 }

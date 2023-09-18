@@ -1,0 +1,10 @@
+<!-- link-dialog.component.html -->
+<h1 mat-dialog-title>Links</h1>
+<div mat-dialog-content>
+  <ul>
+    <li *ngFor="let link of data.links">{{ link.url }}</li>
+  </ul>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>
