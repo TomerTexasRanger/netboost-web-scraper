@@ -2,6 +2,12 @@
 
 #Best used with PHP storm.
 
+#install Docker and run Docker Desktop
+
+#install nodejs
+
+#install "studio 3T"
+
 #clone repository.
 
 #run command "docker-compose up -d"
