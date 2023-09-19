@@ -12,6 +12,7 @@ use Illuminate\Queue\SerializesModels;
 
 class scraperLinks implements ShouldBroadcast
 {
+    private array $targets;
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
@@ -27,7 +28,7 @@ class scraperLinks implements ShouldBroadcast
     /**
      * Get the channels the event should broadcast on.
      *
-     * @return \Illuminate\Broadcasting\Channel|array
+     * @return Channel|array
      */
     public function broadcastOn(): Channel|PrivateChannel|array
     {

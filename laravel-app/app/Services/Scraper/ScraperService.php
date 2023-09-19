@@ -7,6 +7,7 @@ use App\Models\Target;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\BrowserKit\AbstractBrowser;
 use Symfony\Component\BrowserKit\CookieJar;
 use Symfony\Component\BrowserKit\History;
@@ -64,6 +65,7 @@ class ScraperService
                 $this->pageContent = $response->getBody()->getContents();
                 $this->crawlerInstance = new Crawler($this->pageContent, $url);
             } catch (GuzzleException $e) {
+                Log::info($e->getMessage());
                 throw new Exception($e->getMessage());
             }
 

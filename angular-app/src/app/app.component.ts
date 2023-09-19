@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {WebSocketService} from "./shared/services/web-socket.service";
 
 @Component({
   selector: 'app-root',
@@ -8,14 +7,8 @@ import {WebSocketService} from "./shared/services/web-socket.service";
 })
 export class AppComponent {
   title = 'angular-app';
-  constructor(private webSocketService: WebSocketService) {
+  constructor() {
   }
 
-  ngOnInit(): void {
-    // this.webSocketService.connect('ws://localhost:6001');
-    //
-    // this.webSocketService.getMessages().subscribe((message) => {
-    //   console.log('Received a message:', message);
-    // });
-  }
+
 }

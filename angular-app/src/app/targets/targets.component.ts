@@ -19,40 +19,38 @@ import {values} from "pusher-js/types/src/core/utils/collections";
 export class TargetsComponent implements OnInit, AfterViewInit, OnDestroy {
   echo!: Echo;
   displayedColumns: string[] = ['url', 'title', 'links', 'actions'];
-  dataSource = new MatTableDataSource<TargetModel>([]); // Initialize with empty array
+  dataSource = new MatTableDataSource<TargetModel>([]);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private targetService: TargetService, public dialog: MatDialog) {
   }
   ngOnInit(): void {
-    // (window as any).Pusher = Pusher;
+    (window as any).Pusher = Pusher;
 
-    // this.echo  = new Echo({
-    //   broadcaster: 'pusher',
-    //   key: 'f0dd53e89b8cc735d2a7',
-    //   wsHost: window.location.hostname,
-    //   wsPort: 6001,
-    //   cluster: 'mt1',
-    //   forceTLS: false,
-    //   disableStats: true,
-    // });
-    //
-    // this.echo.channel('scraper-links')
-    //   .listen('.scraper-links', (data: any) => {
-    //     console.log('Received data:', data);
-    //     // Your logic here
-    //   });
+    this.echo  = new Echo({
+      broadcaster: 'pusher',
+      key: 'f0dd53e89b8cc735d2a7',
+      wsHost: window.location.hostname,
+      wsPort: 6001,
+      cluster: 'mt1',
+      forceTLS: true,
+      disableStats: true,
+    });
+
+    this.echo.channel('scraper-links')
+      .listen('.scraper-links', (data: any) => {
+      this.dataSource.data = data;
+      });
 
   }
   ngAfterViewInit() {
-    // Initialize paginator after view is initialized
     this.dataSource.paginator = this.paginator;
   }
 
   submitUrl(values: TargetFormInterface) {
     this.targetService.store(values).subscribe({
       next: value => {
-        this.dataSource.data = value; // Update the data source
+        this.dataSource.data = value;
       }
     });
   }
@@ -65,14 +63,11 @@ export class TargetsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onActionClick(element: TargetFormInterface): void {
-    console.log(`Action clicked for element: ${element}`);
+    console.log(element);
   }
 
   ngOnDestroy(): void {
-    this.echo.leave('your-channel');
+    this.echo.leave('scraper-links');
 
   }
-
-
-
 }

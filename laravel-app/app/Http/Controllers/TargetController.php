@@ -18,10 +18,10 @@ class TargetController extends Controller
         try {
             extract($request->validated());
 
-//            StoreScrapedData::dispatch($url, $depth);
-//            return response()->json(['message' => 'Scrape job dispatched']); // uncomment for larger scraping jobs.
+            StoreScrapedData::dispatch($url, $depth);
+            return response()->json(['message' => 'Scrape job dispatched']); // uncomment for larger scraping jobs.
 
-            return  TargetService::Store($request->validated())->response();
+//            return  TargetService::Store($request->validated())->response();
 
         } catch (Exception $exception) {
             return response($exception->getMessage(), 400);

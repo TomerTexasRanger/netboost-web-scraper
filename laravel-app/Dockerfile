@@ -43,6 +43,7 @@ RUN composer install --no-scripts
 # Expose port 9000 to interact with the app
 EXPOSE 9000
 EXPOSE 9003
+EXPOSE 6379
 
 # Start PHP-FPM server
 CMD ["php-fpm"]
