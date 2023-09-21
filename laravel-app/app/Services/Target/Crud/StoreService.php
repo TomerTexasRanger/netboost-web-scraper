@@ -87,7 +87,7 @@ class StoreService extends TargetService
     public function response(): void
     {
         $this->commit();
-        broadcast(new scraperLinks(StoreResource::collection($this->targets)))->toOthers();
+        broadcast(new scraperLinks(StoreResource::collection($this->targets)));
 //        return response(StoreResource::collection($this->targets));
     }
 

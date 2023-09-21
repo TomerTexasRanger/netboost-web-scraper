@@ -1,3 +1,4 @@
+import {io}  from 'socket.io-client';
 import {Component, ViewChild, AfterViewInit, OnInit, OnDestroy} from '@angular/core';
 import {TargetFormInterface} from "./form/form.component";
 import {TargetService} from "../shared/services/http/target.service";
@@ -11,6 +12,7 @@ import Pusher from 'pusher-js';
 import Echo from 'laravel-echo';
 import {values} from "pusher-js/types/src/core/utils/collections";
 import Swal from 'sweetalert2'
+
 
 @Component({
   selector: 'app-targets',
@@ -30,8 +32,10 @@ export class TargetsComponent implements OnInit, AfterViewInit, OnDestroy {
     (window as any).Pusher = Pusher;
 
     this.echo = new Echo({
-      broadcaster: 'pusher',
+      broadcaster: 'socket.io',
+      host: 'http://localhost:6001',
       key: 'f0dd53e89b8cc735d2a7',
+      client: io,
       wsHost: window.location.hostname,
       wsPort: 6001,
       cluster: 'mt1',

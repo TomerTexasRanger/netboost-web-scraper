@@ -14,17 +14,13 @@
 
 #wait for installation to complete
 
-#run "docker exec -it laravel_worker bash"
-
-#in the laravel_worker container run "composer install"
-
-#wait for installations to complete
-
 #open new console tab and and navigate to "laravel-app" container (cd laravel-app)
 
 #press "t" followed by "Tab", now you should be in the "laravel-app" container
 
-#run composer install.
+#run "composer install".
+
+#run "php artisan queue:work --daemon &"
 
 #open new console tab and navigate to angular file (cd angular-app)
 
@@ -34,16 +30,22 @@
 
 #run npx ng serve.
 
-#open new console tab and again navigate to angular-app (cd angular-app)
+#open new console tab and again navigate to laravel-app (cd laravel-app) followed by "t" key and "Tab"
 
 #run  "laravel-echo-server start"
-
-#in the "laravel_worker" console tab, run command "php artisan queue:work"
 
 #open web browser at "http://localhost:4200"
 
 use app. 
 
 
-p.s: if the queue is failing for some reason, you can use the server asynchronislly by uncommenting "TargetController" line 24 and "App\Services\Target\Crud\StoreService" line 86.
-
+#debugger setup (for PHPSTORM):
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-1.png)
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-2.png)
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-3.png)
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-4.png)
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-5.png)
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-6.png)
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-7.png)
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-8.png)
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-9.png)

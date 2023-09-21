@@ -55,4 +55,5 @@ RUN composer install --no-scripts
 EXPOSE 9000
 EXPOSE 9003
 EXPOSE 6379
+EXPOSE 6001
 

@@ -20,7 +20,8 @@ services:
       - PHP_IDE_CONFIG=serverName=laravel-app
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-
+    ports:
+      - "6001:6001"
     networks:
       - app-network
   nginx:

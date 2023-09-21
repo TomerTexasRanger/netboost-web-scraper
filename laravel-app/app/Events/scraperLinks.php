@@ -31,7 +31,7 @@ class scraperLinks implements ShouldBroadcast
      *
      * @return Channel|array
      */
-    public function broadcastOn(): Channel|PrivateChannel|array
+    public function broadcastOn(): Channel|array
     {
         return new Channel('scraper-links');
     }
