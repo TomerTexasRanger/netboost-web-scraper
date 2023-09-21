@@ -49,3 +49,7 @@ use app.
 ![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-7.png)
 ![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-8.png)
 ![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-9.png)
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-10.png)
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-11.png)
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-12.png)
+![](C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images\debugger-13.png)

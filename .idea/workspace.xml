@@ -5,29 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f02686a-d65c-4176-bf6a-c8b380540bdd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php-test-framework.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Debugger images/debugger-13.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/laravel-echo-server.json" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-app/laravel-echo-server.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/laravel-echo-server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-app/laravel-echo-server.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-app/src/app/targets/targets.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-app/src/app/targets/targets.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-app/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-app/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-app/app/Events/scraperLinks.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-app/app/Events/scraperLinks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-app/app/Services/Target/Crud/StoreService.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-app/app/Services/Target/Crud/StoreService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-app/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-app/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-app/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-app/config/cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-app/routes/channels.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-app/routes/channels.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +216,7 @@
       <recent name="C:\Users\sapir\PhpstormProjects\netboostProject\Debugger images" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHP Remote Debug.Docker">
     <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
       <option name="pathToComposerJson" value="$PROJECT_DIR$/laravel-app/composer.json" />
       <method v="2" />
@@ -242,6 +225,13 @@
       <TestRunner configuration_file="$PROJECT_DIR$/laravel-app/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
+    <configuration name="Docker" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" filter_connections="FILTER" server_name="laravel-app" session_id="PHPSTORM">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHP Remote Debug.Docker" />
+      <item itemvalue="PHPUnit.Main" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -251,7 +241,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695289390974</updated>
-      <workItem from="1695289394634" duration="1441000" />
+      <workItem from="1695289394634" duration="1735000" />
     </task>
     <servers />
   </component>
