@@ -32,11 +32,11 @@ RUN apt-get install -y nodejs
 # Copy start script into the container
 COPY start.sh /start.sh
 
-# Set the start script as the entry point
-ENTRYPOINT ["/start.sh"]
-# Install Laravel Echo Server
-RUN npm install -g laravel-echo-server
-
+## Set the start script as the entry point
+#ENTRYPOINT ["/start.sh"]
+## Install Laravel Echo Server
+#RUN npm install -g laravel-echo-server
+#
 
 # Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
