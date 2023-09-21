@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Target;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreRequest extends FormRequest
 {
@@ -24,7 +25,7 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'url' => ['required', 'url'],
+            'url' => ['required', 'url', Rule::unique('targets', 'url')],
             'depth' => ['int', 'nullable'],
         ];
     }

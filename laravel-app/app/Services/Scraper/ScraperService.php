@@ -2,48 +2,41 @@
 
 namespace App\Services\Scraper;
 
-use App\Models\Link;
-use App\Models\Target;
-use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
-use Symfony\Component\BrowserKit\AbstractBrowser;
-use Symfony\Component\BrowserKit\CookieJar;
-use Symfony\Component\BrowserKit\History;
 use Symfony\Component\DomCrawler\Crawler;
-
+use Exception;
 
 class ScraperService
 {
-    private string $urlRegex = '/https?:\/\/[^\s]+/';
-    private Crawler $crawlerInstance;
     private string $url;
-    private int $depth = 1;
-    public string $title = '';
-    private array $pages = [];  // Array to store Page objects
-    private string $pageContent;
+    private int $depth;
+    private array $pages = [];
     private array $queue = [];
     private array $visited = [];
-    private array $links = [];
+    private Client $client;
 
     /**
+     * ScraperService constructor.
+     * @param string $url
+     * @param int $depth
      * @throws Exception
      */
     public function __construct(string $url, int $depth = 1)
     {
-
+        $this->client = new Client();
         $this->url = $url;
         $this->depth = $depth;
-        $this->queue = [...$this->queue, $url];
+        $this->queue[] = $url;
         $this->scrape(0);
     }
 
-
     /**
+     * @param int $currentDepth
      * @throws Exception
      */
-    protected function scrape(int $currentDepth): void
+    private function scrape(int $currentDepth): void
     {
         if ($currentDepth >= $this->depth) {
             return;
@@ -53,55 +46,62 @@ class ScraperService
         $this->queue = [];
 
         foreach ($tempQueue as $url) {
-            if (in_array($url, $this->visited)) {
+            if (in_array($url, $this->visited) || !is_string($url) || empty($url)) {
                 continue;
             }
 
-            $this->visited[] = $url;
+            // Implement a delay to avoid rate-limiting
+            sleep(1);
 
-            $client = new Client();
+            $this->visited[] = $url;
             try {
-                $response = $client->request('GET', $url);
-                $this->pageContent = $response->getBody()->getContents();
-                $this->crawlerInstance = new Crawler($this->pageContent, $url);
+                $response = $this->client->request('GET', $url, ['timeout' => 10]);
+                $pageContent = $response->getBody()->getContents();
+                $crawler = new Crawler($pageContent, $url);
             } catch (GuzzleException $e) {
-                Log::info($e->getMessage());
-                throw new Exception($e->getMessage());
+                Log::error("Failed to scrape URL: $url", ['exception' => $e]);
+                continue; // Skip this URL and continue
             }
 
-            $this->extractTitle();
-            $this->extractLinksViaCrawler();
+            $title = $this->extractTitle($crawler);
+            $links = $this->extractLinks($crawler);
 
-            $page = new Page($url, $this->title, $this->links);
-            $this->pages[] = $page;
-
-            $this->queue = array_unique(array_merge($this->queue, $this->links));
+            $this->pages[] = new Page($url, $title, $links);
+            $this->queue = array_merge($this->queue, $links);
         }
 
         $this->queue = array_diff($this->queue, $this->visited);
-
         $this->scrape($currentDepth + 1);
     }
 
 
-    private function extractTitle(): void
+    /**
+     * @param Crawler $crawler
+     * @return string
+     */
+    private function extractTitle(Crawler $crawler): string
     {
-        $this->title = $this->crawlerInstance->filter('title')->innerText();
+        return $crawler->filter('title')->text();
     }
 
-    private function extractLinksViaCrawler(): void
+    /**
+     * @param Crawler $crawler
+     * @return array
+     */
+    private function extractLinks(Crawler $crawler): array
     {
-        $anchors = $this->crawlerInstance->filter('a')->links();
-        foreach ($anchors as $anchor) {
-            $this->links =[...$this->links, $anchor->getUri()];
-        }
+        return $crawler->filter('a')->each(function (Crawler $node) {
+            $url = $node->link()->getUri();
+            if (preg_match('/https?:\/\/[^\s]+/', $url) && (parse_url($url, PHP_URL_SCHEME) == 'http' || parse_url($url, PHP_URL_SCHEME) == 'https')) {
+                return $url;
+            }
+            return null;
+        });
     }
 
-    private function getPageContent(): void
-    {
-        $this->pageContent = $this->crawlerInstance->html();
-    }
-
+    /**
+     * @return array
+     */
     public function getPages(): array
     {
         return $this->pages;

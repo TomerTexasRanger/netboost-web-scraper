@@ -40,15 +40,16 @@ class Handler extends ExceptionHandler
         });
     }
 
-    public function report(Throwable $e): void
-    {
-        // Resolve the singleton manually
-        $mongoSession = app('App\Services\Transaction\TransactionService');
-
-        // Rollback MongoDB transaction if an exception is thrown
-        $mongoSession->rollback();
-
-        parent::report($e);
-    }
+//    public function report(Throwable $e): void
+//    {
+//        // Resolve the singleton manually
+//        $mongoSession = app('App\Services\Transaction\TransactionService');
+//
+//        // Rollback MongoDB transaction if an exception is thrown
+//        if ($mongoSession->getSession())
+//            $mongoSession->rollback();
+//
+//        parent::report($e);
+//    }
 
 }

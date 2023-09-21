@@ -36,7 +36,7 @@ export class FormComponent {
   constructor(fb: FormBuilder) {
     this.form = fb.group({
       'url': [null, [Validators.required, Validators.pattern(this.urlPattern)]],
-      'depth': [1, [NumberValidator()]]
+      'depth': [1, []]
     }, {updateOn: 'change'});
   }
 

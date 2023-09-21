@@ -27,12 +27,12 @@ class TransactionService
         $this->session->commitTransaction();
     }
 
-    protected function rollback(): void
+    public function rollback(): void
     {
         $this->session->abortTransaction();
     }
 
-    protected function getSession(): Session
+    public function getSession(): Session
     {
         return $this->session;
     }

@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from "@angular/common/http";
 import {catchError, Observable, of} from "rxjs";
-import { TargetModel} from "../../models/target.model";
 import {TargetInterface} from "../../interfaces/target.interface";
+import Swal from 'sweetalert2'
 @Injectable({
   providedIn: 'root',
 })
@@ -27,8 +27,8 @@ export class TargetService {
   }
 
   // POST request
-  store(data: any): Observable<TargetInterface[]> {
-    return this.http.post<TargetInterface[]>(`${this.apiUrl}targets/store`, data, this.httpOptions)
+  store(data: any): Observable<{message: string}> {
+    return this.http.post<{message: string}>(`${this.apiUrl}targets/store`, data, this.httpOptions)
       .pipe(
         catchError(this.handleError<any>('postData'))
       );
@@ -52,8 +52,11 @@ export class TargetService {
 
   // Error handling
   private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
+    return (error: HttpErrorResponse): Observable<T> => {
+      if(error.status === 422){
+        console.log(error)
+  Swal.fire(error.error.errors.url[0])
+      }
       return of(result as T);
     };
   }

@@ -23,11 +23,12 @@ class StoreService extends TargetService
      */
     public function __construct(array $data)
     {
-        $this->initSession();
-        $this->begin();
+
         extract($data);
         $this->url = $url;
         $this->scraperService = new ScraperService($url, $depth ?: 1);
+        $this->initSession();
+        $this->begin();
         $this->storePages();
 
     }
@@ -51,8 +52,10 @@ class StoreService extends TargetService
     private function storeTargetModel(Page $page): void
     {
         try {
-            $this->model = new Target(['url' => $page->url, 'title' => $page->title]);
-            $this->model->save();
+            $this->model = Target::firstOrCreate(['url' => $page->url, 'title' => $page->title]);
+            if ($this->model->wasRecentlyCreated) {
+                $this->model->save();
+            }
 
         } catch (Exception $exception) {
             throw new Exception($exception->getMessage());
@@ -67,13 +70,15 @@ class StoreService extends TargetService
     {
         try {
             foreach ($page->links as $link) {
-                $linkModel = new Link(['url' => $link]);
-                $linkModel->save();
-                $this->model->links()->save($linkModel);
+                $linkModel = Link::firstOrCreate(['url' => $link]);
+
+                if ($linkModel->wasRecentlyCreated) {
+                    $this->model->links()->save($linkModel);
+                }
             }
         } catch (Exception $exception) {
             $this->rollback();
-            throw  new Exception($exception->getMessage());
+            throw new Exception($exception->getMessage());
         }
 
     }

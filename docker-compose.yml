@@ -10,6 +10,7 @@ services:
       - redis
     volumes:
       - ./laravel-app:/var/www
+
     environment:
       - DB_CONNECTION=mongodb
       - DB_HOST=mongo
@@ -46,34 +47,11 @@ services:
     networks:
       - app-network
 
-  node:
-    image: node:16
-    container_name: node
-    ports:
-      - "4200:4200"
-
   redis:
     image: redis:alpine
     container_name: redis
     ports:
       - "6379:6379"
-    networks:
-      - app-network
-
-  laravel-worker:
-    build:
-      context: ./laravel-app
-      dockerfile: Dockerfile
-    container_name: laravel_worker
-    volumes:
-      - ./laravel-app:/var/www
-    command: [ "php", "artisan", "queue:work", "--timeout=3600" ]
-    environment:
-     - REDIS_HOST=redis
-     - REDIS_PORT=6379
-    depends_on:
-      - redis
-      - laravel-app
     networks:
       - app-network
 

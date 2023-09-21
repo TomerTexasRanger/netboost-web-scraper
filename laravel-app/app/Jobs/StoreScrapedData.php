@@ -35,9 +35,14 @@ class StoreScrapedData implements ShouldQueue
      */
     public function handle(): void
     {
-        Log::info('Job handle method started');
-        $storeService = new StoreService(['url' => $this->url, 'depth' => $this->depth]);
-        $storeService->response();
-        Log::info('Job handle method completed');
+        try {
+            Log::info('Job handle method started');
+            $storeService = new StoreService(['url' => $this->url, 'depth' => $this->depth]);
+            $storeService->response();
+        }catch (Exception $exception){
+            Log::info($exception->getMessage());
+            throw new Exception($exception->getMessage());
+        }
+
     }
 }

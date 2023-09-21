@@ -10,6 +10,7 @@ import {LinksDialogComponent} from "../links-dialog/links-dialog/links-dialog.co
 import Pusher from 'pusher-js';
 import Echo from 'laravel-echo';
 import {values} from "pusher-js/types/src/core/utils/collections";
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-targets',
@@ -24,25 +25,28 @@ export class TargetsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(private targetService: TargetService, public dialog: MatDialog) {
   }
+
   ngOnInit(): void {
     (window as any).Pusher = Pusher;
 
-    this.echo  = new Echo({
+    this.echo = new Echo({
       broadcaster: 'pusher',
       key: 'f0dd53e89b8cc735d2a7',
       wsHost: window.location.hostname,
       wsPort: 6001,
       cluster: 'mt1',
-      forceTLS: true,
+      forceTLS: false,
       disableStats: true,
     });
 
     this.echo.channel('scraper-links')
       .listen('.scraper-links', (data: any) => {
-      this.dataSource.data = data;
+        console.log(data)
+        this.dataSource.data = data;
       });
 
   }
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
@@ -50,7 +54,9 @@ export class TargetsComponent implements OnInit, AfterViewInit, OnDestroy {
   submitUrl(values: TargetFormInterface) {
     this.targetService.store(values).subscribe({
       next: value => {
-        this.dataSource.data = value;
+        if(value.message === 'Scrape job dispatched')
+          Swal.fire('Scraper has been dispatched (this might take a while)')
+
       }
     });
   }
